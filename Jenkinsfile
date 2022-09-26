@@ -1,7 +1,7 @@
 pipeline {
   agent any
   stages{
-    stage {
+    stage('uff') {
       script {
         n['1'] = stage('1'){
           steps{ echo "1" }
