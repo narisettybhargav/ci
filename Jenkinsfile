@@ -1,33 +1,16 @@
 pipeline {
   agent any
   stages{
-    script{
-      c['n1'] = stage('one') {
-        stage('INIT'){
-          steps{
-            echo "That's it"
-          }
+    stage {
+      script {
+        n['1'] = stage('1'){
+          steps{ echo "1" }
         }
-        stage('INIT'){
-          steps{
-            echo "That's it"
-          }
+        n['2'] = stage('2'){
+          steps{ echo "2" }
         }
       }
-      c['n2'] = stage('two') {
-        stage('INIT'){
-          steps{
-            echo "That's it"
-          }
-        }
-        stage('INIT'){
-          steps{
-            echo "That's it"
-          }
-        }
-      }
-      parallel c
-
+     parallel n 
     }
     
   }
